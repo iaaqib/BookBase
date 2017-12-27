@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Authors" representedClassName="Authors" syncable="YES" codeGenerationType="class">
+        <attribute name="authorName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasBooks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="hasAuthors" inverseEntity="Books" syncable="YES"/>
+    </entity>
+    <entity name="Books" representedClassName="Books" syncable="YES" codeGenerationType="class">
+        <attribute name="bookTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasAuthors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Authors" inverseName="hasBooks" inverseEntity="Authors" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Books" positionX="-216" positionY="-9" width="128" height="73"/>
+        <element name="Authors" positionX="9" positionY="-19" width="135" height="28"/>
+    </elements>
+</model>
