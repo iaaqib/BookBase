@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var authorNameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    var coreDataManager = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func addToCoreData(_ sender: UIButton) {
+        coreDataManager.saveBookToCoreData(bookTitle: "Game of Thrones", authorName: "R.R Martin")
+        
     }
     
     @IBAction func searchFromCoreData(_ sender: UIButton){

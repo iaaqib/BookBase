@@ -18,20 +18,25 @@ class CoreDataManager: NSObject {
     }()
     
     //Contains Fetched Tasks
-    lazy var books: [Books] = []
-    //MARK: Init
+     var books: [Books] = []
+     var authors: [Authors] = []
+    
+    
+    //MARK: init
     override init() {
-        getBook()
+      super.init()
+        
+        getAllEntities()
         
     }
     
-    //MARK: CoreData Operations
     
     //Fetch from CoreData
-    private func getBooks(){
+    private func getAllEntities(){
         do {
             books = try context.fetch(Books.fetchRequest())
-            
+            print((books.first?.hasAuthors?.allObjects as? [Authors])?.first?.authorName)
+            authors = try context.fetch(Authors.fetchRequest())
         }
         catch {
             debugPrint("Fetching Failed")
@@ -44,8 +49,16 @@ class CoreDataManager: NSObject {
             let books = Books(context: context)
             books.bookTitle = bookTitle
             
-            let authorArray = authorName.split(separator: ",")
-            
+            let authorNameArray = authorName.split(separator: ",")
+            var authorArray: [Authors] = []
+            for authorName in authorNameArray{
+                let author = Authors(context: context)
+                    author.authorName = String(authorName)
+                if !authors.contains(author){
+                    authorArray.append(author)
+                    self.authors.append(author)
+                }
+            }
             let authorSet = NSSet(array: authorArray)
             books.addToHasAuthors(authorSet)
             
@@ -54,11 +67,6 @@ class CoreDataManager: NSObject {
             
             return
         }
-        
-      
-        
-       
-       
         
         
     }
