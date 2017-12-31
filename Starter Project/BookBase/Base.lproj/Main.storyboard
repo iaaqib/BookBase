@@ -113,7 +113,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BookBase" id="6b2-9c-uZS"/>
+                    <navigationItem key="navigationItem" title="BookBase" id="6b2-9c-uZS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="39R-4n-70v">
+                            <connections>
+                                <action selector="refreshList:" destination="BYZ-38-t0r" id="ajy-YS-c88"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorNameTextField" destination="p7y-Fa-7kA" id="qMd-kp-2wv"/>
                         <outlet property="bookNameTextField" destination="0gF-tu-5m6" id="jE3-am-mJB"/>

@@ -42,6 +42,8 @@
 		7B19444F1FF13CE60081E63E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7BDCB84C1FEFD632005CB5F4 /* BookBase.xcdatamodeld */,
+				7B19444D1FF13CDF0081E63E /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -72,8 +74,6 @@
 				7BDCB84F1FEFD632005CB5F4 /* Assets.xcassets */,
 				7BDCB8511FEFD632005CB5F4 /* LaunchScreen.storyboard */,
 				7BDCB8541FEFD632005CB5F4 /* Info.plist */,
-				7BDCB84C1FEFD632005CB5F4 /* BookBase.xcdatamodeld */,
-				7B19444D1FF13CDF0081E63E /* CoreDataManager.swift */,
 			);
 			path = BookBase;
 			sourceTree = "<group>";

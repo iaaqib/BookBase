@@ -33,6 +33,23 @@ class ViewController: UIViewController {
     @IBAction func searchFromCoreData(_ sender: UIButton){
         
     }
+    
+    @IBAction func refreshList(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    //AlertController method
+    func showAlert(title: String?, message: String?){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    //Clear Fields
+    func clearTextFields(){
+        authorNameTextField.text = ""
+        bookNameTextField.text = ""
+    }
 }
 extension ViewController: UITableViewDataSource{
     
