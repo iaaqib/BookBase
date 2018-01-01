@@ -84,7 +84,7 @@ class CoreDataManager: NSObject {
         let filteredBooks = books.filter { (book: Books) -> Bool in
             return book.bookTitle!.lowercased().contains(bookTitle.lowercased())
         }
-        let authorsName = filteredBooks.flatMap{($0.hasAuthors?.allObjects as? [Authors]).flatMap{$0.flatMap{$0.authorName}}}.map{$0.joined(separator: ", ")}
+        let authorsName = filteredBooks.flatMap{($0.hasAuthors?.allObjects as? [Authors]).flatMap{$0.flatMap{$0.authorName}}}.map{$0.joined(separator: ",")}
         
         return (filteredBooks, authorsName)
     }
@@ -94,7 +94,7 @@ class CoreDataManager: NSObject {
         let books = authors.filter({ (author: Authors) -> Bool in
             return author.authorName!.lowercased().contains(authorName.lowercased())
         }).flatMap{$0.hasBooks?.allObjects as? [Books]}.flatMap{$0}
-        let authorsName = books.flatMap{($0.hasAuthors?.allObjects as? [Authors]).flatMap{$0.flatMap{$0.authorName}}}.map{$0.joined(separator: ", ")}
+        let authorsName = books.flatMap{($0.hasAuthors?.allObjects as? [Authors]).flatMap{$0.flatMap{$0.authorName}}}.map{$0.joined(separator: ",")}
         return (books, authorsName)
     }
     
